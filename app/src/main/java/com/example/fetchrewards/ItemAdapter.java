@@ -12,11 +12,9 @@ import java.util.List;
 
 public class ItemAdapter extends RecyclerView.Adapter<ItemViewHolder>{
     private List<Item> itemList;
-    private MainActivity mainAct;
 
-    public ItemAdapter(List<Item> itemList, MainActivity mainActivity) {
+    public ItemAdapter(List<Item> itemList) {
         this.itemList = itemList;
-        mainAct = mainActivity;
     }
 
     @NonNull
