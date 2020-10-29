@@ -39,12 +39,9 @@ public class MainActivity extends AppCompatActivity {
 
         itemAdapter = new ItemAdapter(itemList, this);
 
-        // connect the recyclerView to the adapter
         recyclerView.setAdapter(itemAdapter);
-        /* show the recyclerview */
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // create a JSON object to store each item
         JSONArray jsonArray = null;
         try {
             jsonArray = new JSONArray(loadJSONFromAsset());
@@ -61,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
                         jsonObject.getInt("listId"),
                         jsonObject.getString("name")
                 );
-                // add that JSON object to the itemList
                 itemList.add(0, item);
             }
             catch (JSONException e) {
@@ -69,18 +65,16 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        // sort by listId
         itemList.sort(Comparator.comparingInt(Item::getListId)
                 .thenComparing(Item::getName));
 
-        // filter out any items where "name" is blank or null
         itemList.removeIf(item -> item.getName().isEmpty() || item.getName().equals("null"));
 
         itemAdapter.notifyDataSetChanged();
     }
 
     public String loadJSONFromAsset() {
-        String json = null;
+        String json;
         try {
             InputStream is = getApplicationContext().getAssets().open("hiring.json");
             int size = is.available();

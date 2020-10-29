@@ -5,7 +5,7 @@
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#FFD7E0F8">
+    android:background="@color/primaryLightColor">
 
     <TextView
         android:id="@+id/idField"
@@ -17,8 +17,9 @@
         android:layout_marginBottom="24dp"
         android:ellipsize="end"
         android:maxWidth="295dp"
-        android:text="id"
+        android:text="@string/id"
         android:textAlignment="center"
+        android:textColor="@color/primaryTextColor"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -37,8 +38,9 @@
         android:ellipsize="end"
         android:lines="2"
         android:maxWidth="295dp"
-        android:text="listId"
+        android:text="@string/listid"
         android:textAlignment="center"
+        android:textColor="@color/primaryTextColor"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/idField"
         app:layout_constraintEnd_toStartOf="@+id/nameField"
@@ -51,8 +53,9 @@
         android:layout_height="36dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="32dp"
-        android:text="name"
+        android:text="@string/name"
         android:textAlignment="center"
+        android:textColor="@color/primaryTextColor"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/listIdField"
         app:layout_constraintEnd_toEndOf="parent"
